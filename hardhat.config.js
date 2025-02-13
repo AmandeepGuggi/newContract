@@ -13,6 +13,22 @@ module.exports = {
       },
     },
   },
+  zksolc: {
+    version: "1.4.1",
+    compilerSource: "binary",
+    defaultNetwork: 'sepolia',
+    settings: {
+      optimizer: {
+        enabled: true,
+      },
+    },
+    networks: {
+      hardhat: {},
+      sepolia: {
+        url: 'https://rpc.ankr.com/eth_sepolia',
+        accounts: [`0x${process.env.PRIVATE_KEY}`]
+      }
+    },
   networks: {
     zkSyncSepoliaTestnet: {
       url: "https://sepolia.era.zksync.dev",
@@ -46,4 +62,5 @@ module.exports = {
       },
     },
   },
-};
+},
+}
